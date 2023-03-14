@@ -1,8 +1,9 @@
 package com.vpn.controllers;
 
-import com.driver.model.Admin;
-import com.driver.model.ServiceProvider;
-import com.driver.services.impl.AdminServiceImpl;
+
+import com.vpn.model.Admin;
+import com.vpn.model.ServiceProvider;
+import com.vpn.services.impl.AdminServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,6 @@ public class AdminController {
 
     @PostMapping("/register")
     public ResponseEntity<Void> registerAdmin(@RequestParam String username, @RequestParam String password){
-        //create an admin and return
         Admin admin = adminService.register(username, password);
         return new ResponseEntity<>(HttpStatus.OK);
     }

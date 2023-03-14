@@ -1,7 +1,8 @@
 package com.vpn.services;
 
-import com.driver.model.Admin;
-import com.driver.model.ServiceProvider;
+
+import com.vpn.model.Admin;
+import com.vpn.model.ServiceProvider;
 
 public interface AdminService {
     public Admin register(String username, String password);

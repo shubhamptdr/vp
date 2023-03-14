@@ -1,13 +1,14 @@
 package com.vpn.services.impl;
 
-import com.driver.model.Admin;
-import com.driver.model.Country;
-import com.driver.model.CountryName;
-import com.driver.model.ServiceProvider;
-import com.driver.repository.AdminRepository;
-import com.driver.repository.CountryRepository;
-import com.driver.repository.ServiceProviderRepository;
-import com.driver.services.AdminService;
+
+import com.vpn.model.Admin;
+import com.vpn.model.Country;
+import com.vpn.model.CountryName;
+import com.vpn.model.ServiceProvider;
+import com.vpn.repository.AdminRepository;
+import com.vpn.repository.CountryRepository;
+import com.vpn.repository.ServiceProviderRepository;
+import com.vpn.services.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

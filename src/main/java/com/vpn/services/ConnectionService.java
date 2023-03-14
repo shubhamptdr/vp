@@ -1,6 +1,6 @@
 package com.vpn.services;
 
-import com.driver.model.User;
+import com.vpn.model.User;
 
 public interface ConnectionService {
     public User connect(int userId, String countryName) throws Exception;

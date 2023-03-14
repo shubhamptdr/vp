@@ -1,5 +1,5 @@
 package com.vpn.repository;
-import com.driver.model.User;
+import com.vpn.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

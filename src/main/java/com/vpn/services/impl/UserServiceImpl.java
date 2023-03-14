@@ -1,13 +1,13 @@
 package com.vpn.services.impl;
 
-import com.driver.model.Country;
-import com.driver.model.CountryName;
-import com.driver.model.ServiceProvider;
-import com.driver.model.User;
-import com.driver.repository.CountryRepository;
-import com.driver.repository.ServiceProviderRepository;
-import com.driver.repository.UserRepository;
-import com.driver.services.UserService;
+import com.vpn.model.Country;
+import com.vpn.model.CountryName;
+import com.vpn.model.ServiceProvider;
+import com.vpn.model.User;
+import com.vpn.repository.CountryRepository;
+import com.vpn.repository.ServiceProviderRepository;
+import com.vpn.repository.UserRepository;
+import com.vpn.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +18,7 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepository3;
     @Autowired
     ServiceProviderRepository serviceProviderRepository3;
+
     @Autowired
     CountryRepository countryRepository3;
 

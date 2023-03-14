@@ -1,6 +1,6 @@
 package com.vpn.repository;
 
-import com.driver.model.Country;
+import com.vpn.model.Country;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

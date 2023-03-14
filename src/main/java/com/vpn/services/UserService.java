@@ -1,6 +1,6 @@
 package com.vpn.services;
 
-import com.driver.model.User;
+import com.vpn.model.User;
 
 public interface UserService {
 

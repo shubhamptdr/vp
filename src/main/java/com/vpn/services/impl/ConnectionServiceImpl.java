@@ -1,10 +1,11 @@
 package com.vpn.services.impl;
 
-import com.driver.model.*;
-import com.driver.repository.ConnectionRepository;
-import com.driver.repository.ServiceProviderRepository;
-import com.driver.repository.UserRepository;
-import com.driver.services.ConnectionService;
+
+import com.vpn.model.*;
+import com.vpn.repository.ConnectionRepository;
+import com.vpn.repository.ServiceProviderRepository;
+import com.vpn.repository.UserRepository;
+import com.vpn.services.ConnectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ public class ConnectionServiceImpl implements ConnectionService {
     UserRepository userRepository2;
     @Autowired
     ServiceProviderRepository serviceProviderRepository2;
+
     @Autowired
     ConnectionRepository connectionRepository2;
 
