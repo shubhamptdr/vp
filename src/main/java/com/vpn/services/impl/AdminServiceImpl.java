@@ -3,7 +3,7 @@ package com.vpn.services.impl;
 
 import com.vpn.model.Admin;
 import com.vpn.model.Country;
-import com.vpn.model.CountryName;
+import com.vpn.enums.CountryName;
 import com.vpn.model.ServiceProvider;
 import com.vpn.repository.AdminRepository;
 import com.vpn.repository.CountryRepository;
@@ -40,10 +40,11 @@ public class AdminServiceImpl implements AdminService {
         // fetch admin
         Admin admin = adminRepository1.findById(adminId).get();
         // crete serviceProvider entity
-        ServiceProvider serviceProvider = new ServiceProvider();
+        ServiceProvider serviceProvider = ServiceProvider.builder()
+                .admin(admin)
+                .name(providerName)
+                .build();
 
-        serviceProvider.setAdmin(admin);
-        serviceProvider.setName(providerName);
         admin.getServiceProviders().add(serviceProvider);
 
         // save parent ie admin wrt serviceProvider;
@@ -60,15 +61,18 @@ public class AdminServiceImpl implements AdminService {
 
         // fetch
         ServiceProvider serviceProvider = serviceProviderRepository1.findById(serviceProviderId).get();
-        // create county entity
-        Country country = new Country();
 
-        // set attr.
         CountryName name = CountryName.valueOf(countryName.toUpperCase());
-        country.setCountryName(name);
-        country.setCode(name.toCode());
-        country.setServiceProvider(serviceProvider);
+
+        // create county entity
+        Country country = Country.builder()
+                .countryName(name)
+                .code(name.toCode())
+                .serviceProvider(serviceProvider)
+                .build();
+
         serviceProvider.getCountryList().add(country);
+
         // save parent
         serviceProviderRepository1.save(serviceProvider);
 

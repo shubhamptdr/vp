@@ -1,7 +1,7 @@
 package com.vpn.services.impl;
 
 import com.vpn.model.Country;
-import com.vpn.model.CountryName;
+import com.vpn.enums.CountryName;
 import com.vpn.model.ServiceProvider;
 import com.vpn.model.User;
 import com.vpn.repository.CountryRepository;
@@ -35,11 +35,12 @@ public class UserServiceImpl implements UserService {
         user.setPassword(password);
 
         // create Country entity
-        Country country = new Country();
         //set attr. according to validation
         CountryName name = CountryName.valueOf(countryName.toUpperCase());
-        country.setCountryName(name);
-        country.setCode(name.toCode());
+        Country country = Country.builder()
+                .countryName(name)
+                .code(name.toCode())
+                .build();
 
 //        Country country = countryRepository3.findByCountryName(countryName);
 

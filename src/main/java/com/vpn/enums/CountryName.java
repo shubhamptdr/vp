@@ -1,4 +1,4 @@
-package com.vpn.model;
+package com.vpn.enums;
 
 public enum CountryName {
     IND("001"),

@@ -1,6 +1,7 @@
 package com.vpn.services.impl;
 
 
+import com.vpn.enums.CountryName;
 import com.vpn.model.*;
 import com.vpn.repository.ConnectionRepository;
 import com.vpn.repository.ServiceProviderRepository;
@@ -58,14 +59,15 @@ public class ConnectionServiceImpl implements ConnectionService {
         }
         // create connection and set maskedIp is "updatedCountryCode.serviceProviderId.userId"
         if (serviceProvider!=null){
-            Connection connection = new Connection();
-            //set attr.
-            connection.setUser(user);
-            connection.setServiceProvider(serviceProvider);
 
             String countryC = country.getCode();
             int givenId = serviceProvider.getId();
             String mask = countryC+"."+givenId+"."+userId;
+
+            Connection connection = Connection.builder()
+                    .user(user)
+                    .serviceProvider(serviceProvider)
+                    .build();
 
             user.setConnected(true);
             user.setMaskedIp(mask);
